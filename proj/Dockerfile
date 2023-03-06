@@ -1,6 +1,6 @@
 # FROM ubuntu:20.04
 # FROM maven
-FROM maven:3.9.0
+FROM maven:3.0.5
 # RUN apt update
 RUN apt install git -y
 WORKDIR /tmp/
