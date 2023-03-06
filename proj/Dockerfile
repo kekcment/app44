@@ -2,7 +2,7 @@
 # FROM maven
 FROM maven:3.5.2-jdk-8-alpine 
 # RUN apt update
-RUN apt install git -y
+# RUN apt install git -y
 WORKDIR /tmp/
 RUN git clone https://github.com/kekcment/App44.git
 WORKDIR  /tmp/App44/
