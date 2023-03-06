@@ -1,8 +1,10 @@
-FROM ubuntu:20.04
+# FROM ubuntu:20.04
 # FROM maven
-RUN apt update
-RUN apt install git default-jdk maven -y
+FROM maven:3.5.2-jdk-8-alpine 
+# RUN apt update
+RUN apt install git -y
 WORKDIR /tmp/
 RUN git clone https://github.com/kekcment/App44.git
 WORKDIR  /tmp/App44/
 RUN mvn package
+# default-jdk maven
