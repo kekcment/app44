@@ -15,15 +15,15 @@ services:
     links:
       - db   
     environment:
-       MYSQL_ROOT_PASSWORD: root
-       MYSQL_DATABASE: db
-       MYSQL_USER: acp4pogynvaeidfj
-       MYSQL_PASSWORD: jc31d2qyy7h9jv5jn1u9uosjksxzaizw
-    # environment:
-    #   DB_HOST: db
-    #   DB_USER: acp4pogynvaeidfj
-    #   DB_PASSWORD: jc31d2qyy7h9jv5jn1u9uosjksxzaizw
-    #   DB_NAME: db 
+      #  MYSQL_ROOT_PASSWORD: root
+      #  MYSQL_DATABASE: db
+      #  MYSQL_USER: acp4pogynvaeidfj
+      #  MYSQL_PASSWORD: jc31d2qyy7h9jv5jn1u9uosjksxzaizw
+    environment:
+      DB_HOST: db
+      DB_USER: acp4pogynvaeidfj
+      DB_PASSWORD: jc31d2qyy7h9jv5jn1u9uosjksxzaizw
+      DB_NAME: db 
     volumes:
       - data:/usr/local/tomcat/webapps/
     
