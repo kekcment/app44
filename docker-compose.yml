@@ -11,14 +11,14 @@ services:
     ports:
       - "8081:8080"
     links:
-      - bd    
+      - db    
     volumes:
       - data:/usr/local/tomcat/webapps/
     depends_on:
       - app
       - db
 
-  bd:
+  db:
     image: mysql
     environment:
        MYSQL_ROOT_PASSWORD: root
