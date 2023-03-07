@@ -16,18 +16,16 @@ services:
       - data:/usr/local/tomcat/webapps/
     depends_on:
       - app
-      # - bd
+      - db
 
   bd:
     image: mysql
     environment:
-      # - MYSQL_ROOT_PASSWORD=secret
        MYSQL_ROOT_PASSWORD: root
        MYSQL_DATABASE: db
        MYSQL_USER: acp4pogynvaeidfj
        MYSQL_PASSWORD: jc31d2qyy7h9jv5jn1u9uosjksxzaizw
     ports:
-      # - "3306:8514"
       - "8514:3306"    
     volumes:
       - ./mysql:/var/lib/mysql
