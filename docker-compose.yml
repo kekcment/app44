@@ -14,6 +14,11 @@ services:
       - db    
     volumes:
       - data:/usr/local/tomcat/webapps/
+    environment:
+       MYSQL_ROOT_PASSWORD: root
+       MYSQL_DATABASE: db
+       MYSQL_USER: acp4pogynvaeidfj
+       MYSQL_PASSWORD: jc31d2qyy7h9jv5jn1u9uosjksxzaizw  
     depends_on:
       - app
       - db
