@@ -14,7 +14,6 @@ services:
       - db    
     volumes:
       - data:/usr/local/tomcat/webapps/
-      - ./Config.properties:/usr/local/tomcat/webapps/
     depends_on:
       - app
       - db
