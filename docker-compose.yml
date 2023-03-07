@@ -15,7 +15,7 @@ services:
       - db    
     volumes:
       - data:/usr/local/tomcat/webapps/
-      - mysql:/tmp/App44/
+      - mysql:/usr/local/tomcat/webapps/
     environment:
        MYSQL_ROOT_PASSWORD: root
        MYSQL_DATABASE: db
