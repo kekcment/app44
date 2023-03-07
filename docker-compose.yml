@@ -4,7 +4,7 @@ services:
   app:
     build: proj
     volumes:
-      - /data:/tmp/App44/target/ 
+      - data:/tmp/App44/target/ 
 
   prod:      
     image: tomcat:9.0
@@ -13,7 +13,7 @@ services:
     links:
       - bd    
     volumes:
-      - /tmp/App44/target/:/usr/local/tomcat/webapps/
+      - data:/usr/local/tomcat/webapps/
     depends_on:
       - app
       # - bd
@@ -31,4 +31,6 @@ services:
       - "8514:3306"    
     volumes:
       - ./mysql:/var/lib/mysql
-
+      
+volumes:
+  data:      
