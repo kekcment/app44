@@ -10,26 +10,26 @@ services:
     image: tomcat:9.0
     ports:
       - "8081:8080"
-    # links:
-    #   - db    
+    links:
+      - db    
     volumes:
       - data:/usr/local/tomcat/webapps/
       - ./Config.properties:/usr/local/tomcat/webapps/
     depends_on:
       - app
-  #     - db
+      - db
 
-  # db:
-  #   image: mysql
-  #   environment:
-  #      MYSQL_ROOT_PASSWORD: root
-  #      MYSQL_DATABASE: db
-  #      MYSQL_USER: acp4pogynvaeidfj
-  #      MYSQL_PASSWORD: jc31d2qyy7h9jv5jn1u9uosjksxzaizw
-  #   ports:
-  #     - "8514:3306"    
-  #   volumes:
-  #     - ./mysql:/var/lib/mysql
+  db:
+    image: mysql
+    environment:
+       MYSQL_ROOT_PASSWORD: root
+       MYSQL_DATABASE: db
+       MYSQL_USER: acp4pogynvaeidfj
+       MYSQL_PASSWORD: jc31d2qyy7h9jv5jn1u9uosjksxzaizw
+    ports:
+      - "8514:3306"    
+    volumes:
+      - ./mysql:/var/lib/mysql
       
 volumes:
   data:    
