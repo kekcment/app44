@@ -5,7 +5,7 @@ services:
     build: proj
     volumes:
       - data:/tmp/App44/target/
-      # - mysql:/tmp/App44/ 
+      - config:/tmp/App44/Webcontent/Config.properties 
 
   prod:      
     image: tomcat:9.0
@@ -15,6 +15,7 @@ services:
       - db    
     volumes:
       - data:/usr/local/tomcat/webapps/
+      - config:/usr/local/tomcat/webapps/
       # - mysql:/usr/local/tomcat/webapps/
     # environment:
     #    MYSQL_ROOT_PASSWORD: root
@@ -37,16 +38,17 @@ services:
     volumes:
       - ./mysql:/var/lib/mysql
 
-  phpmyadmin:
-    depends_on:
-      - db
-    image: phpmyadmin/phpmyadmin
-    ports:
-      - '8082:80'
-    environment:
-      PMA_HOST: db
-      MYSQL_ROOT_PASSWORD: root    
+  # phpmyadmin:
+  #   depends_on:
+  #     - db
+  #   image: phpmyadmin/phpmyadmin
+  #   ports:
+  #     - '8082:80'
+  #   environment:
+  #     PMA_HOST: db
+  #     MYSQL_ROOT_PASSWORD: root    
       
 volumes:
   data:
-  # mysql:     
+  # mysql:
+  config:     
