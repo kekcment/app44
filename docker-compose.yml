@@ -10,7 +10,9 @@ services:
     image: tomcat:9.0
     ports:
       - "8081:8080"
-      - "8082:8514" 
+      - "8082:8514"
+    links:
+      - db   
     environment:
        MYSQL_ROOT_PASSWORD: root
        MYSQL_DATABASE: db
@@ -30,7 +32,7 @@ services:
        MYSQL_USER: acp4pogynvaeidfj
        MYSQL_PASSWORD: jc31d2qyy7h9jv5jn1u9uosjksxzaizw
     ports:
-      - "3306:3306"    
+      - "8514:3306"    
     volumes:
       - ./mysql:/var/lib/mysql
       
