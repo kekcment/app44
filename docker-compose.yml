@@ -35,7 +35,7 @@ services:
     ports:
       - "8514:3306"    
     volumes:
-      - mysql:/tmp/App44/
+      - ./mysql:/var/lib/mysql
 
   phpmyadmin:
     depends_on:
