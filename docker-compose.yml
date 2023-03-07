@@ -5,7 +5,7 @@ services:
     build: proj
     volumes:
       - data:/tmp/App44/target/
-      - mysql:/tmp/App44/ 
+      # - mysql:/tmp/App44/ 
 
   prod:      
     image: tomcat:9.0
@@ -15,12 +15,12 @@ services:
       - db    
     volumes:
       - data:/usr/local/tomcat/webapps/
-      - mysql:/usr/local/tomcat/webapps/
-    environment:
-       MYSQL_ROOT_PASSWORD: root
-       MYSQL_DATABASE: db
-       MYSQL_USER: acp4pogynvaeidfj
-       MYSQL_PASSWORD: jc31d2qyy7h9jv5jn1u9uosjksxzaizw  
+      # - mysql:/usr/local/tomcat/webapps/
+    # environment:
+    #    MYSQL_ROOT_PASSWORD: root
+    #    MYSQL_DATABASE: db
+    #    MYSQL_USER: acp4pogynvaeidfj
+    #    MYSQL_PASSWORD: jc31d2qyy7h9jv5jn1u9uosjksxzaizw  
     depends_on:
       - app
       - db
@@ -49,4 +49,4 @@ services:
       
 volumes:
   data:
-  mysql:     
+  # mysql:     
