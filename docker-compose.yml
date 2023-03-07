@@ -5,7 +5,7 @@ services:
     build: proj
     volumes:
       - data:/tmp/App44/target/
-      - config:/tmp/App44/WebContent/Config.properties 
+      - ./Config.properties:/tmp/App44/WebContent/Config.properties 
 
   prod:      
     image: tomcat:9.0
@@ -15,7 +15,7 @@ services:
       - db    
     volumes:
       - data:/usr/local/tomcat/webapps/
-      - config:/usr/local/tomcat/webapps/
+      - ./Config.properties:/usr/local/tomcat/webapps/
       # - mysql:/usr/local/tomcat/webapps/
     # environment:
     #    MYSQL_ROOT_PASSWORD: root
