@@ -13,10 +13,10 @@ services:
     links:
       - bd    
     volumes:
-      - /data:/usr/local/tomcat/webapps/
+      - /tmp/App44/target/:/usr/local/tomcat/webapps/
     depends_on:
       - app
-      - bd
+      # - bd
 
   bd:
     image: mysql
@@ -31,3 +31,4 @@ services:
       - "8514:3306"    
     volumes:
       - ./mysql:/var/lib/mysql
+
