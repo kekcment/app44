@@ -28,6 +28,6 @@ services:
        MYSQL_PASSWORD: root
     ports:
       # - "3306:8514"
-      - "3306:3306"    
+      - "8514:3306"    
     volumes:
       - ./mysql:/var/lib/mysql
