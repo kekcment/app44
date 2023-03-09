@@ -19,6 +19,7 @@ services:
       MYSQL_USER: acp4pogynvaeidfj
       MYSQL_PASSWORD: jc31d2qyy7h9jv5jn1u9uosjksxzaizw
       MYSQL_DB: db  
+      MYSQL_ROOT_PASSWORD: root
     volumes:
       - data:/usr/local/tomcat/webapps/
     
