@@ -20,6 +20,7 @@ services:
       MYSQL_PASSWORD: jc31d2qyy7h9jv5jn1u9uosjksxzaizw
       MYSQL_DB: db  
       MYSQL_ROOT_PASSWORD: root
+    command: bash -c "cp /usr/local/tomcat/webapps/App42PaaS-Java-MySQL-Sample-0.0.1-SNAPSHOT/Config.properties /usr/local/tomcat/ROOT/"  
     volumes:
       - data:/usr/local/tomcat/webapps/
     
