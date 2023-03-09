@@ -4,7 +4,7 @@ services:
   app:
     build: proj
     volumes:
-      - data:/tmp/App44/target/
+      - data:/tmp/App44/target/App42PaaS-Java-MySQL-Sample-0.0.1-SNAPSHOT.war
 
   prod:      
     image: tomcat:9.0
