@@ -7,7 +7,7 @@ services:
       - data:/tmp/App44/target/
 
   prod:      
-    image: tomcat:9.0
+    build: prod
     depends_on:
       - db
     ports:
