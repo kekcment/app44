@@ -5,7 +5,6 @@ services:
     build: proj
     volumes:
       - data:/tmp/App44/target/
-      - config:/tmp/App44/App42PaaS-Java-MySQL-Sample-0.0.1-SNAPSHOT/
 
   prod:      
     image: tomcat:9.0
@@ -20,20 +19,9 @@ services:
       MYSQL_HOST: db
       MYSQL_USER: acp4pogynvaeidfj
       MYSQL_PASSWORD: jc31d2qyy7h9jv5jn1u9uosjksxzaizw
-      MYSQL_DB: db
-      #  MYSQL_ROOT_PASSWORD: root
-      #  MYSQL_DATABASE: db
-      #  MYSQL_USER: acp4pogynvaeidfj
-      #  MYSQL_PASSWORD: jc31d2qyy7h9jv5jn1u9uosjksxzaizw
-    # environment:
-      # DB_HOST: db
-      # DB_USER: acp4pogynvaeidfj
-      # # DB_PASSWORD: jc31d2qyy7h9jv5jn1u9uosjksxzaizw
-      # # DB_NAME: db 
-      # # MYSQL_ROOT_PASSWORD: root   
+      MYSQL_DB: db  
     volumes:
       - data:/usr/local/tomcat/webapps/
-      - config:/usr/local/tomcat/ROOT/
     
 
   db:
@@ -41,13 +29,12 @@ services:
     environment:
        MYSQL_ROOT_PASSWORD: root
        MYSQL_DATABASE: db
-      #  MYSQL_USER: acp4pogynvaeidfj
-      #  MYSQL_PASSWORD: jc31d2qyy7h9jv5jn1u9uosjksxzaizw
+       MYSQL_USER: acp4pogynvaeidfj
+       MYSQL_PASSWORD: jc31d2qyy7h9jv5jn1u9uosjksxzaizw
     ports:
       - "8514:3306"    
     volumes:
-      - todo-mysql-data:/var/lib/mysql
-      #  - ./db/init.sql:/docker-entrypoint-initdb.d/init.sql
+      - ./var/lib/mysql
 
   phpmyadmin:
     depends_on:
@@ -61,5 +48,4 @@ services:
       
 volumes:
   data:
-  todo-mysql-data:
   config:    
