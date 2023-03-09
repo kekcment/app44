@@ -1,3 +1,3 @@
-FROM ubuntu:20.04
+FROM tomcat9
 WORKDIR  /usr/local/tomcat/ROOT/
-COPY Config.properties /usr/local/tomcat/ROOT/Config.properties
+ADD Config.properties /usr/local/tomcat/ROOT/Config.properties
