@@ -5,6 +5,7 @@ services:
     build: proj
     volumes:
       - data:/tmp/App44/target/
+      - config:/tmp/App44/App42PaaS-Java-MySQL-Sample-0.0.1-SNAPSHOT
 
   prod:      
     image: tomcat:9.0
@@ -32,6 +33,7 @@ services:
       # # MYSQL_ROOT_PASSWORD: root   
     volumes:
       - data:/usr/local/tomcat/webapps/
+      - config:/usr/local/tomcat/ROOT/
     
 
   db:
@@ -59,4 +61,5 @@ services:
       
 volumes:
   data:
-  todo-mysql-data:    
+  todo-mysql-data:
+  config:    
