@@ -12,7 +12,7 @@ services:
       - db
     ports:
       - "8080:8080"
-      - "8514:8514"
+      - "8510:8514"
     links:
       - db   
     environment:
